@@ -4,9 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 
-import App from './components/App';
+
 import AppTable from './components/AppTable';
-import reducers from './reducers/contactReducer';
+import reducers from './reducers';
+import Loans from './components/CreateLoans';
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -25,7 +27,8 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppTable />
+    {/* <AppTable /> */}
+    <Loans />
    </Provider>,
   document.querySelector('#root')
 );
