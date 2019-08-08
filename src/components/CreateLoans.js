@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 import validate from './validate';
+import data from './data';
 
 const renderPrincipal = ({ input, label, type, meta: { touched, error } }) => (
     <div>
@@ -151,6 +152,11 @@ const renderLoans = ({ fields, meta: { touched, error, submitFailed } }) => (
     </ul>
     
   )
+
+const handleClick = (e) => {
+   console.log(e)
+
+}
   
 
 const FieldArraysForm = (props) => {
@@ -161,7 +167,7 @@ const FieldArraysForm = (props) => {
             <FieldArray name= "loans" component={renderLoans}/>
             <div className="ui section divider"></div>
             <div className="ui buttons">
-                <button className="ui primary button" type="submit" disabled={submitting}>Calculate</button>
+                <button className="ui primary button" type="submit" onClick={() => console.log("hello")} disabled={submitting}>Calculate</button>
                 <div className="or"></div>
                 <button className="ui button" type="button" disabled={pristine || submitting} onClick={reset}>Reset</button>
             </div>
@@ -172,12 +178,12 @@ const FieldArraysForm = (props) => {
 
 
 export default reduxForm({
-    form: 'debt', 
+    form: 'loanCalc', 
     initialValues: {
         "loans": [
           {}
         ]
       },
-    validate
-    
+    validate,
+    data
 })(FieldArraysForm)

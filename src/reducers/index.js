@@ -6,5 +6,6 @@ import contacts from './contactReducer';
 
 
 export default combineReducers({
-    form: formReducer
+    form: formReducer, 
+    contacts
 });

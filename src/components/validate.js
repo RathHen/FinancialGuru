@@ -1,6 +1,7 @@
 import React from 'react';
+
 const validate = values => {
-    console.log(values)
+  console.log(values)
     const errors = {}
     if(!values.Income) {
       errors.Income = 'Required'
@@ -25,7 +26,6 @@ const validate = values => {
         errors.loans = loansArrayErrors
       }
     }
-    console.log(errors)
     return errors
   }
   
