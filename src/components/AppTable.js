@@ -37,7 +37,6 @@ class AppTable extends Component {
 
 
   listView(data, index){
-      
     return (  <li key = {index}>
     <div className="row">
         <div className="col-md-10">

@@ -29,7 +29,9 @@ const renderPrincipal = ({ input, label, type, meta: { touched, error } }) => (
 
   const renderIncome = ({ input, label, type, meta: { touched, error } }) => 
   (
+    
     <div>
+    
       {/* <label>{label}</label> */}
       <div className="ui big right labeled input">
           <label htmlFor="amount" className="ui label">$</label>
