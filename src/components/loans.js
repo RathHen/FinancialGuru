@@ -49,11 +49,13 @@ class loans extends Component {
       renderIncome = ({ input, label, type, meta: { touched, error } }) => 
       (
         <div>
+          <br>
+          </br>
           <h1 style= {{color: "Black", fontWeight: "bold"}}>Payment Calculator</h1>
           <p>A calculator that allows you to enter multiple loans and provide the most optimal payment plan to save you money and time!</p>
           {/* <label>{label}</label> */}
           <br></br>
-          <h2>My disposable income is...</h2>
+          <h2>My disposable Monthly Income Is...</h2>
           <div className="ui small right labeled input">
               <label htmlFor="amount" className="ui label">$</label>
             <input {...input} type={type} placeholder={label} id="amount" />
@@ -175,7 +177,7 @@ class loans extends Component {
             <td>
             <Field 
                 name={`${loan}.apr`}
-                type="number"
+                type="text"
                 component={this.renderAPR}
                 label="Ex 3.65%"
                 disabled={this.bugPatch(this.props)}
@@ -259,7 +261,7 @@ class loans extends Component {
     amortizationPayments(sortedVal){
       var paymentArray = [];
       console.log(sortedVal)
-      for (var i = 0; i < sortedVal[0].loanPaymentsArray.length-1; i++) { 
+      for (var i = 0; i < sortedVal[0].loanPaymentsArray.length; i++) { 
         paymentArray.push(<tr key={i}>{this.calcPaymemts(sortedVal, i)}</tr>);
       }
       console.log(paymentArray)
@@ -268,7 +270,7 @@ class loans extends Component {
 
     calcPaymemts(sortedVal, i){
       var itemsArray = [];
-      itemsArray.push(<td>{i+1}</td>);
+      itemsArray.push(<td key={i}>{i+1}</td>);
       sortedVal.forEach(function (item) {
         itemsArray.push(<td key={item.loanPaymentsArray[i]}>{item.loanPaymentsArray[i]}</td>)
       });
@@ -415,7 +417,7 @@ class loans extends Component {
           </table>
         
 
-      <table className="ui inverted teal very compact table">
+      <table className="ui teal very compact table">
         <thead>
           <tr>
             <th>Payment #</th>
@@ -432,7 +434,7 @@ class loans extends Component {
         
             return (
 
-                <div className="ui placeholder segment">
+                <div className="ui fluid placeholder segment">
                 <div className="ui icon header">
                     <i className="hand point up outline icon"></i>
                     Please Click Calculate
