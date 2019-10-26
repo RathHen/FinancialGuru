@@ -49,15 +49,14 @@ class loans extends Component {
       renderIncome = ({ input, label, type, meta: { touched, error } }) => 
       (
         <div>
-          <br>
-          </br>
-          <h1 style= {{color: "Black", fontWeight: "bold"}}>Payment Calculator</h1>
-          <p>A calculator that allows you to enter multiple loans and provide the most optimal payment plan to save you money and time!</p>
+          
+          <h1 style= {{color: "Black", fontWeight: "bold", marginLeft: "7%"}}>Payment Calculator</h1>
+          <p2 style= {{marginLeft: "7%"}}>A calculator that allows you to enter multiple loans and provide the most optimal payment plan to save you money and time!</p2>
           {/* <label>{label}</label> */}
           <br></br>
-          <h2>My disposable Monthly Income Is...</h2>
-          <div className="ui small right labeled input">
-              <label htmlFor="amount" className="ui label">$</label>
+          <h2 style={{marginLeft: "35%", fontWeight: "bolder"}}>My disposable Monthly Income Is</h2>
+          <div  style= {{ marginLeft: "37%" }} className="ui large right labeled input">
+              <label htmlFor="amount"  className="ui label">$</label>
             <input {...input} type={type} placeholder={label} id="amount" />
             <div className="ui basic label">.00</div>
             <div>
@@ -109,11 +108,8 @@ class loans extends Component {
     renderLoans = ({ fields, meta: { touched, error, submitFailed } }) => (
     
         <ul>
-            <div>
-            </div>
-            
-    
-            <table className="ui inverted teal celled table">
+          <div style={{marginRight: "15%", marginLeft: "5%"}}>
+        <table className="ui inverted teal celled table">
           {/* Add loans group, mapping through the array and giving unique keys*/}
           <thead>
                 <tr>
@@ -133,17 +129,6 @@ class loans extends Component {
             {/* Button to remove a loan */}
 
             <td>
-              
-            {/* <h3> Loan #{index + 1} </h3> */}
-            
-                  {/* <button 
-                  className="circular negative ui icon button" 
-                  onClick={() => fields.remove(index)} 
-                  type="button"
-                  title="Remove loan"
-                  disabled={this.bugPatch(this.props)}>
-                  <i className="trash alternate icon"></i>
-                  </button> */}
          
               <Field 
                   name={`${loan}.name`}
@@ -154,16 +139,7 @@ class loans extends Component {
               />
            
             </td>
-            {/* <button
-                type="button"
-                title="Remove loan"
-                component={this.renderDelete}
-                onClick={() => fields.remove(index)}
-                disabled={this.bugPatch(this.props)}
-                /> */}
-               
         
-                
             
                  <td>
               <Field 
@@ -209,10 +185,12 @@ class loans extends Component {
 
           
           </table>
+          
 
           <button className="positive ui labeled icon button" disabled={this.bugPatch(this.props)} type="button" onClick={() => fields.push({})}>Add Loans or Debt
                 <i className="plus circle icon"></i>
             </button>
+            </div>
             
             {(touched || submitFailed) && error && <span>{error}</span>}
         </ul>
@@ -392,7 +370,8 @@ class loans extends Component {
       return (
         
         <div>                    
-          <LineChart width={1000} height={600} data={finalData}
+          <div style={{marginLeft: "auto"}}>
+          <LineChart width={1600} height={800} data={finalData}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="payment" />
@@ -401,8 +380,9 @@ class loans extends Component {
             <Legend />
             {this.createLines(finalData)}
           </LineChart>
+          </div>
 
-          <table className="ui teal table">
+          <table style={{marginLeft: "2%", marginRight:"10%"}} className="ui teal table">
             <thead>
               <tr><th>Total Payments</th>
               <th>Total Interest</th>
@@ -417,7 +397,7 @@ class loans extends Component {
           </table>
         
 
-      <table className="ui teal very compact table">
+      <table style={{marginLeft: "2%", marginRight:"10%"}} className="ui teal very compact table">
         <thead>
           <tr>
             <th>Payment #</th>
@@ -464,7 +444,7 @@ class loans extends Component {
                     <FieldArray name= "loans" component={this.renderLoans}/>
                    </div>
                     <div className="ui section divider"></div>
-                    <div className="ui buttons">
+                    <div style={{marginLeft: "42%"}}className="ui buttons">
                         <button className="ui primary button" type="submit"  disabled={submitting}>Calculate</button>
                         <div className="or"></div>
                         <button className="ui button" type="button" disabled={pristine || submitting} onClick={reset}>Reset</button>

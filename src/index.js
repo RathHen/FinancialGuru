@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import Loans from './components/loans';
+import Header from './components/header';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,7 +18,10 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Loans></Loans>
+    <Header>
+    </Header>
+    <Loans >
+    </Loans>
     
     
    </Provider>,
