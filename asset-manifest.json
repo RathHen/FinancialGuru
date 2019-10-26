@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/FinancialGuru/static/js/main.0f5b685c.chunk.js",
+    "main.js.map": "/FinancialGuru/static/js/main.0f5b685c.chunk.js.map",
+    "runtime~main.js": "/FinancialGuru/static/js/runtime~main.eb2a8122.js",
+    "runtime~main.js.map": "/FinancialGuru/static/js/runtime~main.eb2a8122.js.map",
+    "static/js/2.11a848c8.chunk.js": "/FinancialGuru/static/js/2.11a848c8.chunk.js",
+    "static/js/2.11a848c8.chunk.js.map": "/FinancialGuru/static/js/2.11a848c8.chunk.js.map",
+    "index.html": "/FinancialGuru/index.html",
+    "precache-manifest.fc9cfe5185926801291c05c94986f5eb.js": "/FinancialGuru/precache-manifest.fc9cfe5185926801291c05c94986f5eb.js",
+    "service-worker.js": "/FinancialGuru/service-worker.js"
+  }
+}
