@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "56d408a2aa85415f1a285d1219f02498",
+    "revision": "f6e9457ec545f6e3403b0ef0bae75466",
     "url": "/FinancialGuru/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FinancialGuru/static/js/2.11a848c8.chunk.js"
   },
   {
-    "revision": "cf5905709ebc00c08e2a",
-    "url": "/FinancialGuru/static/js/main.0f5b685c.chunk.js"
+    "revision": "f4bb69f5072babbe9fee",
+    "url": "/FinancialGuru/static/js/main.081d3057.chunk.js"
   },
   {
     "revision": "eb98d1365a38bfa42e28",
